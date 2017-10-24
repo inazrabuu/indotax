@@ -28,7 +28,7 @@ def count_tax(number):
 	for k in edges:
 		factor = k['max'] - k['min'] if k['max'] > 0 else k['min']
 		if number > k['min']:
-			if (residue >= factor):
+			if residue >= factor and k['max'] > 0:
 				payable += factor * k['rate'] / 100
 				residue = residue - factor
 			else:
@@ -40,7 +40,7 @@ def main():
 	number = input("Please enter your income: ")
 	payable = count_tax(number)
 
-	print "tax {:,}".format(payable)
+	print "your tax is: {:,}".format(payable)
 
 if __name__ == '__main__':
 	main()
