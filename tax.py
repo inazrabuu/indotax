@@ -38,9 +38,7 @@ def count_tax(number):
 
 def main():
 	number = input("Please enter your income: ")
-	payable = count_tax(number)
-
-	print "your tax is: {:,}".format(payable)
+	print "your tax is: {:,}".format(count_tax(number))
 
 if __name__ == '__main__':
 	main()
